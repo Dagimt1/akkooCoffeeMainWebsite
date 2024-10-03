@@ -18,7 +18,7 @@ const LandingPage = () => {
         <div className="overlay">
           <div className="text-container">
             <h2 className="tagline">Enjoy the taste of</h2>
-            <h1 className="title">botanical</h1>
+            <h1 className="title">Akkoo Coffee</h1>
             <p className="description">
               Our coffee doesn’t have to taste that way. But it does. It’s not your typical. It’s unnecessarily good.
               Maybe that’s because we’re unnecessarily driven.

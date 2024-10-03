@@ -1,0 +1,164 @@
+/* Ensure the body has no margins or padding that could cause overflow */
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Container for the entire landing page */
+  .landing-page {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 20px;
+  }
+  
+  /* Background container and image */
+  .background-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-height: calc(100vh - 40px); /* Adjust height to account for padding */
+    border-radius: 20px;
+    overflow: hidden; /* Ensure the content fits within the rounded corners */
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2); /* Optional: Add subtle shadow */
+  }
+  
+  /* Image fits the container */
+  .background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  
+  /* Overlay for darkening the background */
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Dark overlay for contrast */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Keep content centered on the page */
+    padding: 20px;
+    border-radius: 20px;
+    box-sizing: border-box;
+  }
+  
+  /* Text styles */
+  .text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    color: white;
+    width: 100%; /* Ensure the container takes full width */
+    max-width: 90%; /* Prevent overflow by limiting width */
+    padding: 0 20px; /* Add padding on the sides */
+    box-sizing: border-box;
+  }
+  
+  /* Tagline styles */
+  .tagline {
+    font-family: "Sora", sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    line-height: 1.2em;
+    margin-bottom: 10px;
+    word-wrap: break-word; /* Ensure long words break to fit within the screen */
+  }
+  
+  /* Title styles */
+  .title {
+    font-family: "Sora", sans-serif;
+    font-size: 6.25rem;
+    font-weight: 700;
+    letter-spacing: 0em;
+    line-height: 1em;
+    margin: 0;
+    word-wrap: break-word;
+  }
+  
+  /* Description styles */
+  .description {
+    font-family: "Sora", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0em;
+    line-height: 1.3em;
+    max-width: 600px;
+    text-align: center;
+    margin-top: 1rem;
+    word-wrap: break-word;
+  }
+  
+  /* Bottom section for beans info */
+  .bottom-info {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .beans-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .beans-info p {
+    font-size: 1rem;
+    max-width: 200px;
+  }
+  
+  /* Responsive styling */
+  @media (max-width: 768px) {
+    .title {
+      font-size: 3rem;
+    }
+  
+    .description {
+      font-size: 1rem;
+    }
+  
+    .tagline {
+      font-size: 1.5rem;
+    }
+  
+    .beans-info h3 {
+      font-size: 1.2rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .title {
+      font-size: 2rem;
+    }
+  
+    .tagline {
+      font-size: 1.2rem;
+    }
+  
+    .description {
+      font-size: 0.9rem;
+    }
+  
+    .beans-info p {
+      font-size: 0.9rem;
+    }
+  }
+  
