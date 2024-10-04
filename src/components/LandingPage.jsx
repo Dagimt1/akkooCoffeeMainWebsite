@@ -2,6 +2,14 @@ import React from 'react';
 import './LandingPage.css';
 
 const LandingPage = () => {
+  // Scroll down function to scroll to the next section
+  const handleScrollDown = () => {
+    window.scrollTo({
+      top: window.innerHeight, // Scroll down to the next section
+      behavior: 'smooth'
+    });
+  };
+
   return (
     <div className="landing-page">
       <div className="background-container">
@@ -20,17 +28,26 @@ const LandingPage = () => {
             <h2 className="tagline">Enjoy the taste of</h2>
             <h1 className="title">Akkoo Coffee</h1>
             <p className="description">
-              Our coffee doesn’t have to taste that way. But it does. It’s not your typical. It’s unnecessarily good.
-              Maybe that’s because we’re unnecessarily driven.
+              Most people visit us expecting only good coffee, but they leave impressed by our “Buna Kurs” (barley flour
+              with butter). From Machiatto to Café-latte, Espresso, and more—our coffee is exceptional.
             </p>
+
           </div>
 
           {/* Bottom Section */}
           <div className="bottom-info">
             <div className="beans-info">
-              <h3>99+ Beans</h3>
-              <p>“Too far” is exactly where we want to be. All in the name of coffee.</p>
+              <h3>24/7 Service</h3>
+              <p>
+                We’re open around the clock. Stop by any time to enjoy good coffee and Ethiopian dishes in generous
+                portions. Just come, sit back, and enjoy!
+              </p>
             </div>
+          </div>
+
+          {/* Scroll Down Arrow */}
+          <div className="scroll-down" onClick={handleScrollDown}>
+            <span className="arrow-down"></span>
           </div>
         </div>
       </div>

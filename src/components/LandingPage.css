@@ -5,10 +5,10 @@ body, html {
     overflow-x: hidden; /* Prevent horizontal scrolling */
     width: 100%;
     height: 100%;
-  }
-  
-  /* Container for the entire landing page */
-  .landing-page {
+}
+
+/* Container for the entire landing page */
+.landing-page {
     position: relative;
     width: 100vw;
     height: 100vh;
@@ -18,10 +18,10 @@ body, html {
     overflow: hidden;
     box-sizing: border-box;
     padding: 20px;
-  }
-  
-  /* Background container and image */
-  .background-container {
+}
+
+/* Background container and image */
+.background-container {
     position: relative;
     width: 100%;
     height: 100%;
@@ -29,18 +29,18 @@ body, html {
     border-radius: 20px;
     overflow: hidden; /* Ensure the content fits within the rounded corners */
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2); /* Optional: Add subtle shadow */
-  }
-  
-  /* Image fits the container */
-  .background-image {
+}
+
+/* Image fits the container */
+.background-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
-  }
-  
-  /* Overlay for darkening the background */
-  .overlay {
+}
+
+/* Overlay for darkening the background */
+.overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -54,10 +54,10 @@ body, html {
     padding: 20px;
     border-radius: 20px;
     box-sizing: border-box;
-  }
-  
-  /* Text styles */
-  .text-container {
+}
+
+/* Text styles */
+.text-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -67,10 +67,10 @@ body, html {
     max-width: 90%; /* Prevent overflow by limiting width */
     padding: 0 20px; /* Add padding on the sides */
     box-sizing: border-box;
-  }
-  
-  /* Tagline styles */
-  .tagline {
+}
+
+/* Tagline styles */
+.tagline {
     font-family: "Sora", sans-serif;
     font-size: 2.5rem;
     font-weight: 700;
@@ -78,10 +78,10 @@ body, html {
     line-height: 1.2em;
     margin-bottom: 10px;
     word-wrap: break-word; /* Ensure long words break to fit within the screen */
-  }
-  
-  /* Title styles */
-  .title {
+}
+
+/* Title styles */
+.title {
     font-family: "Sora", sans-serif;
     font-size: 6.25rem;
     font-weight: 700;
@@ -89,10 +89,10 @@ body, html {
     line-height: 1em;
     margin: 0;
     word-wrap: break-word;
-  }
-  
-  /* Description styles */
-  .description {
+}
+
+/* Description styles */
+.description {
     font-family: "Sora", sans-serif;
     font-size: 1rem;
     font-weight: 400;
@@ -102,10 +102,11 @@ body, html {
     text-align: center;
     margin-top: 1rem;
     word-wrap: break-word;
-  }
-  
-  /* Bottom section for beans info */
-  .bottom-info {
+}
+
+/* Bottom section for beans info */
+/* Bottom section for beans info with blurred background and rounded corners */
+.bottom-info {
     position: absolute;
     bottom: 30px;
     left: 30px;
@@ -113,52 +114,109 @@ body, html {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-  }
-  
-  .beans-info h3 {
-    font-size: 1.5rem;
+    background: rgba(255, 255, 255, 0.1); /* Slight white tint */
+    backdrop-filter: blur(10px); /* Blur the background */
+    border-radius: 20px; /* Rounded corners */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Subtle border */
+    padding: 0 50px; /* Add padding inside the box */
+    max-width: 500px; /* Limit the width */
+    box-sizing: border-box; /* Ensure padding doesn’t overflow */
+}
+
+/* Beans info heading */
+.beans-info h3 {
+    font-family: "Sora", sans-serif;
+    font-size: 2rem;
     margin-bottom: 0.5rem;
-  }
-  
-  .beans-info p {
+    font-weight: 700;
+}
+
+/* Beans info description */
+.beans-info p {
+    font-family: "Sora", sans-serif;
     font-size: 1rem;
     max-width: 200px;
-  }
-  
-  /* Responsive styling */
-  @media (max-width: 768px) {
+    line-height: 1.5;
+}
+
+
+/* Scroll Down Arrow */
+.scroll-down {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    border: 2px solid white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    animation: bounce 2s infinite; /* Bouncing animation */
+}
+
+/* Arrow inside the circle */
+.arrow-down {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 15px solid #D96704; /* Orange arrow */
+}
+
+/* Bouncing animation */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
     .title {
-      font-size: 3rem;
+        font-size: 3rem;
     }
   
     .description {
-      font-size: 1rem;
+        font-size: 1rem;
     }
   
     .tagline {
-      font-size: 1.5rem;
+        font-size: 1.5rem;
     }
   
     .beans-info h3 {
-      font-size: 1.2rem;
+        font-size: 1.2rem;
     }
-  }
-  
-  @media (max-width: 480px) {
+
+    /* Hide scroll down arrow on smaller screens */
+    .scroll-down {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
     .title {
-      font-size: 2rem;
+        font-size: 2rem;
     }
   
     .tagline {
-      font-size: 1.2rem;
+        font-size: 1.2rem;
     }
   
     .description {
-      font-size: 0.9rem;
+        font-size: 0.9rem;
     }
   
     .beans-info p {
-      font-size: 0.9rem;
+        font-size: 0.9rem;
     }
-  }
-  
+}
